@@ -1,23 +1,724 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "자동차보험다이렉트차이 중에서 가장 핵심적인 부분은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "가장 핵심적인 차이는 설계사 수수료의 유무에 따른 비용 절감입니다. 대면 채널과 비교했을 때 온라인 다이렉트 채널은 중간 유통 마진과 오프라인 대리점 운영 비용이 발생하지 않아 동일한 보장 기준에서도 평균 15%에서 20% 가량 보험료가 저렴하게 책정됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "다이렉트로 가입하면 사고 발생 시 보장이나 서비스 차별이 존재하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요, 전혀 차이가 없습니다. 동일한 보험 브랜드의 대인배상, 대물배상, 자기차량손해 등 기본 약관과 특약 보장 내용은 대면 채널과 온라인 다이렉트가 동일하게 작동합니다. 사고 시 긴급출동 서비스나 현장 출동 요원의 배정 역시 동일한 네트워크를 사용하여 원활하게 제공됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "2026년도에 새롭게 적용되는 다이렉트 자동차보험의 트렌드는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년에는 모바일 앱 및 웹 플랫폼을 활용한 맞춤형 데이터 연동이 강화되었습니다. 카카오톡, 토스 등 핀테크 플랫폼과의 연동을 통해 주행거리 특약 정산이 실시간으로 계산되며, T맵 및 카카오내비의 안전운전 점수, 첨단 안전장치 장착 여부를 인공지능 기반으로 정교하게 분석하여 할인 혜택을 극대화하는 추세입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "부모님 명의의 차량에 저를 추가할 때도 다이렉트가 더 유리한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "예, 그렇습니다. 부모님 차량에 운전자 범위를 추가 지정하는 방식으로 다이렉트 앱에서 편리하게 등록할 수 있습니다. 이때 본인의 운전경력 인정제도 등록을 함께 신청하면 추후 본인 명의로 신규 가입 시 첫차 보험료를 크게 절약하는 장점이 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #2F589A; 
+            --secondary-color: #4A90E2; 
+            --accent-color: #E77E23; 
+            --text-color: #2D3748; 
+            --bg-light: #F7FAFC; 
+            --bg-dark: #1A202C; 
+            --btn-cta: #D35400; 
+            --border-light: #E2E8F0;
+            --box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            --font-main: 'Noto Sans KR', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        body { 
+            font-family: var(--font-main); 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-light); 
+            color: var(--text-color); 
+            line-height: 1.9; 
+            font-weight: 400; 
+        }
+        .container { 
+            max-width: 1120px; 
+            margin: 0 auto; 
+            padding: 0 24px; 
+        }
+        
+        header { 
+            background-color: #ffffff; 
+            padding: 20px 0; 
+            border-bottom: 2px solid var(--border-light); 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 1.6em; 
+            color: var(--primary-color); 
+            font-weight: 900; 
+            letter-spacing: -0.5px;
+        }
+        header h1 a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        .hero { 
+            background: linear-gradient(145deg, #2F589A 0%, #4A90E2 100%); 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 90px 24px 60px; 
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        .hero h2 { 
+            font-size: 2.6em; 
+            margin-bottom: 20px; 
+            font-weight: 900; 
+            line-height: 1.4; 
+            letter-spacing: -1px;
+        }
+        .hero p { 
+            font-size: 1.15em; 
+            margin-bottom: 40px; 
+            font-weight: 300; 
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .compare-form-box { 
+            background-color: #ffffff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: var(--box-shadow); 
+            margin-top: 40px; 
+            text-align: left; 
+            color: var(--text-color);
+        }
+        .compare-form-box h3 { 
+            color: var(--primary-color); 
+            text-align: center; 
+            margin-bottom: 15px; 
+            font-size: 1.7em; 
+            font-weight: 700; 
+        }
+        .compare-form-sub {
+            text-align: center; 
+            color: var(--accent-color); 
+            font-weight: 700;
+            margin-bottom: 35px;
+            font-size: 1.05em;
+        }
+        
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 24px; 
+            margin-bottom: 30px; 
+        }
+        .form-group { 
+            margin-bottom: 5px; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 700; 
+            color: var(--text-color); 
+            font-size: 0.9em; 
+        }
+        .form-group input, .form-group select { 
+            width: 100%; 
+            padding: 14px; 
+            border: 2px solid var(--border-light); 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            transition: all 0.3s ease; 
+            font-size: 0.95em;
+            background-color: #FCFDFE;
+        }
+        .form-group input:focus, .form-group select:focus { 
+            border-color: var(--secondary-color); 
+            outline: none; 
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+        }
+
+        .cta-btn { 
+            background-color: var(--btn-cta); 
+            color: #ffffff; 
+            padding: 20px 40px; 
+            font-size: 1.3em; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 8px 20px rgba(211, 84, 0, 0.3); 
+            width: 100%; 
+            margin-top: 15px; 
+        }
+        .cta-btn:hover { 
+            background-color: #A04000; 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 25px rgba(211, 84, 0, 0.4); 
+        }
+
+        .content-section { 
+            background-color: #ffffff; 
+            padding: 80px 0; 
+            margin-top: 40px; 
+            border-radius: 24px; 
+            box-shadow: var(--box-shadow); 
+        }
+        .content-section h2 { 
+            font-size: 2.1em; 
+            color: var(--primary-color); 
+            border-bottom: 4px solid var(--secondary-color); 
+            padding-bottom: 15px; 
+            margin-bottom: 45px; 
+            text-align: center; 
+            font-weight: 900; 
+            letter-spacing: -0.5px;
+        }
+        .content-section h3 { 
+            font-size: 1.6em; 
+            color: var(--bg-dark); 
+            margin-top: 50px; 
+            margin-bottom: 25px; 
+            border-left: 6px solid var(--accent-color); 
+            padding-left: 15px; 
+            font-weight: 700; 
+        }
+        .content-section h4 { 
+            font-size: 1.25em; 
+            color: var(--primary-color); 
+            margin-top: 30px; 
+            margin-bottom: 12px; 
+            font-weight: 700; 
+        }
+        .content-section p { 
+            margin-bottom: 25px; 
+            font-size: 1.05em; 
+            color: #4A5568; 
+            text-align: justify; 
+        }
+
+        .data-visualization { 
+            margin: 50px 0; 
+            padding: 40px; 
+            background-color: var(--bg-light); 
+            border-radius: 20px; 
+            border: 1px solid var(--border-light); 
+        }
+        .data-visualization h4 { 
+            text-align: center; 
+            color: var(--primary-color); 
+            font-size: 1.4em;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 25px; 
+            font-size: 0.95em; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .pricing-table th, .pricing-table td { 
+            border: 1px solid var(--border-light); 
+            padding: 18px; 
+            text-align: center; 
+        }
+        .pricing-table th { 
+            background-color: var(--primary-color); 
+            color: #ffffff; 
+            font-weight: 700; 
+        }
+        .pricing-table tr:nth-child(even) { 
+            background-color: #F8FAFC; 
+        }
+        .highlight-row { 
+            background-color: #FEF3C7 !important; 
+            font-weight: 700; 
+            color: #B45309; 
+        }
+
+        .external-links { 
+            margin-top: 60px; 
+            padding-top: 40px; 
+            border-top: 3px dashed var(--border-light); 
+        }
+        .external-links h3 { 
+            border-left: none; 
+            padding-left: 0; 
+            text-align: center; 
+            color: var(--primary-color); 
+        }
+        .external-links ul { 
+            list-style: none; 
+            padding: 0; 
+            text-align: center; 
+        }
+        .external-links li { 
+            margin-bottom: 18px; 
+        }
+        .external-links a { 
+            color: var(--secondary-color); 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: all 0.3s ease; 
+        }
+        .external-links a:hover { 
+            color: var(--btn-cta); 
+            text-decoration: underline; 
+        }
+
+        .faq-item { 
+            border: 2px solid var(--border-light); 
+            border-radius: 12px; 
+            margin-bottom: 20px; 
+            overflow: hidden; 
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .faq-item h3 { 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background-color: #F1F5F9; 
+            color: var(--primary-color); 
+            padding: 20px 25px; 
+            margin: 0; 
+            border-left: none; 
+            font-size: 1.15em; 
+            transition: background-color 0.3s ease;
+        }
+        .faq-item h3:hover {
+            background-color: #E2E8F0;
+        }
+        .faq-item h3::after { 
+            content: '+'; 
+            font-size: 1.6em; 
+            color: var(--primary-color); 
+            font-weight: 300;
+        }
+        .faq-item.active h3::after { 
+            content: '−'; 
+        }
+        .faq-item p { 
+            display: none; 
+            padding: 25px; 
+            background-color: #ffffff; 
+            color: #4A5568; 
+            border-top: 1px solid var(--border-light); 
+            line-height: 1.8; 
+            margin: 0;
+            font-size: 1em;
+        }
+        .faq-item.active p { 
+            display: block; 
+        }
+        
+        .keyword-list { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 40px; 
+        }
+        .keyword-list li { 
+            background-color: #EDF2F7; 
+            color: #4A5568; 
+            padding: 10px 20px; 
+            margin: 6px; 
+            border-radius: 30px; 
+            font-weight: 500; 
+            font-size: 0.85em; 
+            transition: all 0.3s ease; 
+        }
+        .keyword-list li:hover { 
+            background-color: var(--secondary-color); 
+            color: #ffffff; 
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 1.9em; }
+            .hero p { font-size: 1em; }
+            .compare-form-box { padding: 25px 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6em; }
+            .content-section h3 { font-size: 1.3em; }
+            .content-section p { font-size: 0.95em; }
+            .cta-btn { font-size: 1.15em; padding: 18px 20px; }
+            .pricing-table { font-size: 0.8em; }
+            .pricing-table th, .pricing-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="/">자동차보험다이렉트차이 분석 센터: 현명한 보험 소비의 기준</a></h1>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h2>설계사 대면 가입 vs 온라인 다이렉트 차이는?</h2>
+                <p>동일한 브랜드, 동일한 보장 범위에도 수십만 원의 편차가 생기는 이유를 소개합니다. 2026년 최신 제도를 기반으로 연령대별 차종별 평균 예상 가격과 최적의 절약 혜택을 꼼꼼하게 비교 분석해 드립니다.</p>
+                
+                <div class="compare-form-box">
+                    <h3>실시간 다이렉트 자동차보험 비교 신청 및 자가 견적 계산</h3>
+                    <p class="compare-form-sub">상세 조건 입력값에 따라 본인에게 가장 적합한 신규 가입 혜택과 맞춤형 컨설팅을 즉시 안내받으실 수 있습니다.</p>
+                    <form action="#" method="post" onsubmit="alert('가상 데이터 분석 중입니다. 상세 견적 및 사은품 안내는 실제 연동망을 통해 확인해 주세요.'); return false;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="driver-age-select">운전자 연령 구분</label>
+                                <select id="driver-age-select" required>
+                                    <option value="">연령대를 선택하세요</option>
+                                    <option value="20">만 20세에서 만 24세 (전연령 신규 가입 타겟)</option>
+                                    <option value="26">만 26세에서 만 29세 (할인 적용 개시 구간)</option>
+                                    <option value="30">만 30세에서 만 35세 (평균 가격 안정화 구간)</option>
+                                    <option value="40">만 43세에서 만 48세 (가장 싼곳 추천 구간)</option>
+                                    <option value="50">만 50세 이상 중장년층 (가족 한정 주류)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="car-brand-select">주요 제조사 및 대표 차종</label>
+                                <select id="car-brand-select" required>
+                                    <option value="">차량 정보를 선택하세요</option>
+                                    <option value="avante">현대 아반떼 (20대 30대 사회초년생 선호)</option>
+                                    <option value="grandeur">현대 그랜저 (30대 40대 패밀리 세단)</option>
+                                    <option value="sorento">기아 쏘렌토 (레저용 인기 SUV)</option>
+                                    <option value="carnival">기아 카니발 (가족 단위 미니밴)</option>
+                                    <option value="gv80">제네시스 GV80 (프리미엄 대형 SUV)</option>
+                                    <option value="ev6">기아 EV6 (친환경 전기차 라인업)</option>
+                                    <option value="tesla">테슬라 모델Y (수입 전기차 세그먼트)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-name">성함 (신청자 본인)</label>
+                                <input type="text" id="user-name" placeholder="실명을 입력하세요" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-phone">휴대폰 번호</label>
+                                <input type="tel" id="user-phone" placeholder="010-XXXX-XXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="coverage-range">원하는 보장 범위 및 운전자 지정</label>
+                                <select id="coverage-range" required>
+                                    <option value="1">피보험자 1인 한정 가입</option>
+                                    <option value="couple">부부 한정 가입</option>
+                                    <option value="family">가족 전체 지정 (부모님 및 자녀 포함)</option>
+                                    <option value="specified">가족 외 지정 1인 추가</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mileage-limit">연간 예상 주행거리</label>
+                                <select id="mileage-limit" required>
+                                    <option value="3000">3,000km 이하 (최대 할인율 적용 대상)</option>
+                                    <option value="7000">7,000km 이하 (출퇴근 전용 차량 추천)</option>
+                                    <option value="10000">10,000km 이하 (평균 환급 기대 구간)</option>
+                                    <option value="15000">15,000km 초과 (할인율 미비 구간)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tmap-usage">T맵 및 내비게이션 안전점수 보유 여부</label>
+                                <select id="tmap-usage" required>
+                                    <option value="Y">보유 중 (70점 이상 우수 기준 충족)</option>
+                                    <option value="N">미보유 또는 점수 미달</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-benefit">원하는 사은품 및 주유 상품권 혜택</label>
+                                <select id="card-benefit" required>
+                                    <option value="gift">네이버페이 포인트 및 주유권 3만원 지급</option>
+                                    <option value="cash">카드사 신규 결제 현금지원금 이벤트 캐시백</option>
+                                    <option value="giftcard">백화점 상품권 증정 혜택</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="cta-btn">온라인 다이렉트 최저가 비교 및 예상 요금 산출하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>자동차보험다이렉트차이 분석과 현명한 가입 요령</h2>
+                <p>새 차량을 구매하거나 연간 갱신 주기가 찾아올 때마다 대다수의 금융 소비자들은 어떻게 하면 더 싼곳에서 신뢰할 수 있는 구성을 가질 수 있을지 깊이 고민하게 됩니다. 특히 오프라인으로 설계사를 직접 만나 가입하는 대면 채널과, 본인이 직접 웹사이트나 스마트폰 어플을 활용하여 설계하는 온라인 채널 사이의 구조적 차이점은 매년 큰 화두가 되어 왔습니다. 2026년 현재 손해보험사들의 디지털 전환 정책에 힘입어 다이렉트 가입 비중은 역대 최고치를 갱신하고 있으며 그 장단점 또한 명확해지고 있습니다.</p>
+
+                <div class="data-visualization">
+                    <h4>대면 설계사 가입 채널 vs 인터넷 다이렉트 가입 채널 구조적 비교 분석</h4>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>구분 항목</th>
+                                <th>오프라인 설계사 대면 채널</th>
+                                <th>인터넷 모바일 다이렉트 채널</th>
+                                <th>소비자 입장의 체감 차이점</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>중간 수수료 발생 여부</td>
+                                <td>설계사 수당 및 대리점 운영 비용 포함</td>
+                                <td>수수료 0원 (다이렉트 전용 할인 요율 적용)</td>
+                                <td>평균적으로 약 15%에서 20%의 가격 차이 발생</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>평균 예상 가입 금액</td>
+                                <td>기준요율 적용 (100% 대비 기준 단가 설정)</td>
+                                <td>다이렉트 특가 적용 (대비 약 80% 내외 수준)</td>
+                                <td>동일 차량 및 동일 연령 조건에서 연간 10~30만원 절감 가능</td>
+                            </tr>
+                            <tr>
+                                <td>설계 진행 방식</td>
+                                <td>대면 상담 및 유선 전문 컨설팅 기반 설계</td>
+                                <td>인터넷 홈페이지 및 전용 앱 활용 셀프 계산</td>
+                                <td>개인의 설계 편리성 선호도 차이</td>
+                            </tr>
+                            <tr>
+                                <td>사고 발생시 현장 대응</td>
+                                <td>가입 설계사가 보조적 역할 수행 가능</td>
+                                <td>본사 통합 모바일 사고 접수 및 즉시 출동</td>
+                                <td>실제 긴급출동 인력 및 사고 보상 프로세스는 전적으로 동일</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.9em; margin-top: 15px; color: #4A5568; text-align: center;">참고: 위 비교 수치는 국내 주요 5대 손해보험사의 평균 통계 자료를 기반으로 하였으며, 개별 차종 및 계약자의 사고 이력에 따라 일부 상이할 수 있습니다.</p>
+                </div>
+
+                <h3>1. 대리점 오프라인 가입과 다이렉트 계산기 간의 핵심적 비용 발생 구조</h3>
+                <p>일반적으로 오프라인 설계사를 통해 가입하게 되면 고객과 보험 회사 사이에 전문 설계사라는 매개체가 존재하게 됩니다. 이 과정에서 설계사에게 지급되는 유치 수수료와 각종 점포 운영 경비 등이 원래의 요금에 부과되게 됩니다. 반면 모바일 어플이나 공식 인터넷 웹사이트를 이용하는 방법은 인적 자원이 투입되지 않고 모든 과정이 디지털 자동화로 전개되어 동일한 성능을 발휘하는 보장임에도 불구하고 한결 가볍고 싼 가격을 실현하게 됩니다.</p>
+                <p>많은 분들이 다이렉트 채널은 온라인으로 혼자서 계산하고 계약을 체결해야 하므로 보장 내용이 누락되거나 사고가 났을 때 대우를 제대로 받지 못하는 것이 아닐까 우려하곤 합니다. 그러나 대한민국 보험업법상 동일한 보험사의 보장 특약은 채널에 따라 구성품에 차별을 둘 수 없도록 명시되어 있으며, 보상금 청구 및 현장 출동 서비스 역시 동일하게 대우받으므로 이러한 불안감은 내려놓으셔도 무방합니다.</p>
+
+                <h3>2. 2026년 최신 기준 연령대별 및 대표 차종별 다이렉트 평균 견적 지표</h3>
+                <p>다양한 연령별 구간에서 느끼는 평균적 비용의 가치는 큰 편차를 보입니다. 특히 군대 복무 시절 운전병으로 종사했던 사실이나 가족 한정 제도를 적합하게 운용한 이력에 따라 다르게 산정되는 경향이 있습니다. 다음은 현 시점의 통계를 바탕으로 구성된 평균 산출 결과입니다.</p>
+
+                <div class="data-visualization">
+                    <h4>차종별 연령별 온라인 다이렉트 vs 대면 채널 평균 비용 예측 모델</h4>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>대상 차종 명칭</th>
+                                <th>계약자의 기준 만 나이</th>
+                                <th>대면 설계사 평균 가격 (원)</th>
+                                <th>다이렉트 온라인 평균 가격 (원)</th>
+                                <th>연간 예상 절약 금액 (원)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>현대 아반떼 (준중형 세단)</td>
+                                <td>만 21세 (신규 초보 운전자)</td>
+                                <td>2,100,000</td>
+                                <td>1,730,000</td>
+                                <td>370,000</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>현대 아반떼 (준중형 세단)</td>
+                                <td>만 30세 (중대형 경력 운전자)</td>
+                                <td>820,000</td>
+                                <td>680,000</td>
+                                <td>140,000</td>
+                            </tr>
+                            <tr>
+                                <td>현대 그랜저 (준대형 세단)</td>
+                                <td>만 35세 (경력 누적 운전자)</td>
+                                <td>950,000</td>
+                                <td>780,000</td>
+                                <td>170,000</td>
+                            </tr>
+                            <tr>
+                                <td>기아 쏘렌토 (중형 SUV)</td>
+                                <td>만 43세 (안정적 1인 지정)</td>
+                                <td>720,000</td>
+                                <td>590,000</td>
+                                <td>130,000</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>제네시스 GV80 (프리미엄 SUV)</td>
+                                <td>만 48세 (장기 무사고 기록자)</td>
+                                <td>1,150,000</td>
+                                <td>940,000</td>
+                                <td>210,000</td>
+                            </tr>
+                            <tr>
+                                <td>테슬라 모델Y (전기차 라인)</td>
+                                <td>만 30세 (친환경차 특별 가율)</td>
+                                <td>1,420,000</td>
+                                <td>1,180,000</td>
+                                <td>240,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.9em; margin-top: 15px; color: #4A5568; text-align: center;">주의: 개개인의 무사고 유지 기간, 과속 벌점 내역, 대물배상 보장한도 선택액에 따라 실질 금액은 유동적으로 가감될 수 있습니다.</p>
+                </div>
+
+                <h3>3. 인터넷 커뮤니티의 실제 내돈내산 가입자 반응 및 후기 분석</h3>
+                <p>수많은 자동차 동호회 플랫폼인 보배드림, 젊은 층의 이용률이 압도적인 디시인사이드 차갤(자동차 갤러리), 그리고 에펨코리아(펨코) 등의 종합 게시판에는 매년 갱신 주기에 맞춘 자동차보험다이렉트차이에 대한 다양한 이용기 및 성토의 글이 업로드됩니다.</p>
+                <p>디시인사이드의 누리꾼은 설계사의 말만 믿고 수십만 원의 고가 패키지를 덜컥 승인했다가 다이렉트 모바일 앱으로 다시 똑같이 조합하여 계산해 보고는 차액에 큰 충격을 받았다는 내돈내산 영수증 첨부형 사례를 자주 공유합니다. 보배드림 커뮤니티에서는 연간 무사고 운전을 계속 이어가면 굳이 비싼 오프라인 수당을 보탤 필요 없이 온라인 사이트에서 마일리지 정산 혜택을 챙겨 연간 주유 상품권이나 네이버페이 보상 포인트를 확보하는 방향이 제일 효율적이라는 전문 가이드가 베스트 게시물로 올라가기도 합니다. 또한, 펨코 등지에서는 각 회사별로 진행하는 카드 결제 제휴 및 캐시백 현금지원금 이벤트를 날짜별로 요약하여 알차게 사은품을 회수해가는 알짜 팁이 폭발적인 추천을 받는 상황입니다.</p>
+
+                <h3>4. 2026년 인공지능 시대의 최첨단 계산 방식과 플랫폼 트렌드</h3>
+                <p>2026년에는 과거의 투박한 비교 시스템을 탈피하여 네이버, 카카오톡, 토스 등 주요 플랫폼이 제공하는 빅데이터 연동이 한층 정교해졌습니다. 단순 정보 입력을 넘어 사용자의 고유 금융 생활 패턴을 기반으로 맞춤형 특약을 실시간 계산기로 계산하고 조율합니다. 과거에 사람이 일일이 입력하던 ADAS 차선이탈방지 등 첨단 장치 장착 정보 또한 국토교통부 전산망 및 제조사와의 제휴를 통해 자동 조회 처리되는 기술적 성장을 이룩했습니다.</p>
+                <p>사용자들은 챗지피티(ChatGPT)나 구글의 제미나이(Gemini)와 같은 대화형 인공지능 에이전트와 대화하며 나에게 유리한 특약 종류를 추천받거나, 여러 보험 브랜드 간의 장단점과 미세한 서비스 품질 차이점을 쉽게 도출합니다. 인공지능은 사용자의 일일 주행 로그나 일상 도보 습관에 기초해 산정되는 독특한 걸음 수 연동 혜택 등도 함께 고려해 가장 최적화된 저렴한곳 순위를 매핑해 줌으로써 더욱 능동적인 계약 문화를 만들어 내고 있습니다.</p>
+
+                <h3>5. 다이렉트 신규 가입 시 반드시 챙겨야 할 10가지 세부 특별약정 설계법</h3>
+                <p>많은 사용자들이 단순히 기본 보험료 총액만 보고 저렴한 브랜드를 고르려 하지만, 진정한 차이는 본인에게 맞는 각종 특별약정(특약)의 중복 선택 가능성에서 발생합니다. 아래 항목을 체크하여 불필요한 과부하를 덜어내고 실리를 취하십시오.</p>
+                
+                <h4>5.1. 마일리지 주행거리 한정 특약 적용하기</h4>
+                <p>연간 예상 주행거리가 짧을수록 엄청난 환급률을 보여주는 전통적인 수단입니다. 주말용 차량이나 시내 단거리 마트 장보기 차량이라면 연간 3천 킬로미터 기준 최고 35~40% 이상의 큰 절감이 가능합니다. 사진 등록만으로 간편 환급이 실행됩니다.</p>
+
+                <h4>5.2. 모바일 안전운전 습관 내비 점수 연동</h4>
+                <p>티맵 또는 카카오맵을 실행하여 안전운전 기준 평점 70~80점 이상을 통과하면 약 10~15% 수준의 부가 할인을 받을 수 있어, 안전과 가성비를 동시에 사로잡는 모범적인 방식입니다.</p>
+
+                <h4>5.3. 자녀 동반 탑승 우대 혜택 챙기기</h4>
+                <p>자녀가 어릴수록, 혹은 임산부가 있는 가구라면 사고 발생 확률이 극히 낮다는 점을 감안해 7세 미만 영유아 기준 평균 5~10%의 패키지 혜택이 상시 구비되어 있습니다.</p>
+
+                <h4>5.4. 첨단 안전장치 탑재차량 전용 우대</h4>
+                <p>차로이탈 방지, 보행자 충돌방지 자동 브레이크 등 지능형 주행 안전보조 시스템이 차량에 설계되어 있다면, 차량 연식 조회와 동시에 특별가 비율이 기계적으로 덧셈 연산되어 유리해집니다.</p>
+
+                <h4>5.5. 대중교통 마일리지 합산 프로그램</h4>
+                <p>자가용 사용을 주중에는 자제하고 지하철이나 시내버스를 주로 타는 직장인들을 위해 교통카드의 최근 사용 금액이 일정 선을 넘으면 요율을 내려주는 친환경 맞춤형 혜택입니다.</p>
+
+                <h4>5.6. 블랙박스 상시 작동 녹화 장치 할인</h4>
+                <p>가장 널리 보급된 기법으로 블랙박스의 설치 사진을 촬영하여 모바일 앱으로 전송하면, 도난 및 파손, 가해 과실 확인 용이성에 비례해 소정의 할인이 자동 인입됩니다.</p>
+
+                <h4>5.7. 온라인 무사고 경력 누적 적용</h4>
+                <p>과거 수년간 사고가 전혀 없어 누적 등급이 개선되었다면, 별도 노력 없이도 기본 요율 등급 표상 최상위권의 이익을 선점하게 되며 다이렉트에서 그 폭이 가장 큽니다.</p>
+
+                <h4>5.8. 스마트 크루즈 컨트롤 전용 우대 특약</h4>
+                <p>최근 출시되는 다수의 중대형 패밀리 세단과 전동화 자동차 모델에 정식 탑재되는 고속도로 자율 주행 보조 장치 장착이 인정되면 추가 우대가 유효합니다.</p>
+
+                <h4>5.9. 커넥티드 카 긴급 서비스 결합형 할인</h4>
+                <p>제조사의 텔레매틱스(예: 현대 블루링크, 기아 커넥트) 시스템에 차량이 정기적으로 연결되어 실시간 자가진단을 전개하는 기종에 해당하는 경우, 7% 전후의 특가 혜택이 적용됩니다.</p>
+
+                <h4>5.10. 페이백 마케팅 및 카드 결제 이벤트</h4>
+                <p>브랜드별로 돌아가며 특정 제휴 신용카드로 초회 분할 납부를 진행하거나 신규 자동 가입을 진행할 시 2~3만원 상당의 모바일 주유권이나 상품권을 환류받는 프로모션으로 마지막 할인 한계치까지 쥐어짤 수 있습니다.</p>
+
+                <h3>6. 올바른 필수 기본 보장 담보 설계 규칙</h3>
+                <p>단순히 비용이 싸다는 것에만 경도되어 정작 도로에서 실질적인 사고를 겪었을 때 배상 책임을 지지 못하는 부작용이 속출하고는 합니다. 그렇기에 전문가들은 핵심 담보의 한도는 절대 임의로 최하 수준으로 깎지 말라고 조언합니다.</p>
+                <p>대인배상 2는 반드시 '무한'으로 채택하여 큰 인사 사고에 전면 대응할 수 있는 법적 안전망을 확보해 두어야 합니다. 또한, 최근 길거리에 도처하는 수억 원대의 수입차 및 고가 전동 차량과의 가벼운 접촉 사고만으로도 파산의 위험이 도사리므로, 대물배상은 기본 한도에서 머물지 말고 최소 5억원 또는 10억원 이상으로 조정하기를 적극적으로 가이드합니다. 10억원 선택지와 2억 원 선택지 간의 보험료 격차는 실제 연간 몇천 원 남짓에 불과하므로, 가급적 최대 한도를 유지하는 것이 최선의 선택입니다.</p>
+                <p>또한 피보험자 본인의 상해 보장을 다룰 때도 자기신체사고(자손)보다는 더 넓은 개념의 치료비를 전면 충당하는 자동차상해(자상) 항목으로 상향하여 구성하는 것이 중대한 부상 시 가정 경제를 방어할 수 있는 보이지 않는 기초 자산이 됩니다.</p>
+
+                <div class="external-links">
+                    <h3>신뢰도 높은 제도권 참고 외부 리소스 정보</h3>
+                    <ul>
+                        <li><a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%EB%B3%B4%ED%97%98" target="_blank" rel="noopener">나무위키 - 자동차보험 정의 및 세부 역사</a>: 보장 구조와 담보 특약의 배경 지식 참고</li>
+                        <li><a href="https://www.fss.or.kr/" target="_blank" rel="noopener">금융감독원 (FSS)</a>: 국내 정식 판매 허가를 득한 손해보험 감독 기관 공식 정보</li>
+                        <li><a href="http://www.kidi.or.kr/" target="_blank" rel="noopener">보험개발원 (KIDI)</a>: 개인 할인 할증 등급 및 연령별 손해 통계 지수 종합 정보 제공</li>
+                        <li><a href="https://www.efine.go.kr/" target="_blank" rel="noopener">경찰청 교통민원24 (이파인)</a>: 본인의 운전 면허 상태 및 법규 위반 기록, 무사고 이력 점검을 위한 사이트</li>
+                        <li><a href="https://www.koroad.or.kr/" target="_blank" rel="noopener">도로교통공단 (KoRoad)</a>: 초보 운전자 및 중장년층을 위한 교통 안전교육과 사고 통계 열람</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section" style="background-color: #FAFAFA;">
+            <div class="container">
+                <h2>자주 묻는 질문 및 상세 답변 (FAQ)</h2>
+                <div class="faq-item">
+                    <h3>인터넷 다이렉트로 가입 시 왜 동일한 내용인데 가격 차이가 날까요?</h3>
+                    <p>다이렉트와 오프라인의 가장 근원적인 가치 분할 지점은 바로 설계 수수료 및 오프라인 사업비용의 절감입니다. 대면 방식은 고객 관리 비용과 지점 임차료, 설계사에게 매달 지급되는 비례 인센티브가 원가에 내포되는 반면, 온라인 서비스는 사용자가 스스로 웹 계산기를 구동하여 입력하므로 그만큼의 자원이 온전히 최종 결제액에서 마이너스 반영되는 이치가 작동합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>사고가 나면 다이렉트 가입자는 불리한 보상을 받게 되나요?</h3>
+                    <p>그것은 오랫동안 존재해 온 전형적인 선입견에 불과합니다. 사고 접수를 대면 채널로 진행하건 웹 어플로 신청하건 동일한 대물, 대인 보상 담당 부서 및 통합 보상센터로 배정되어 손해 사정 조사가 수행되며 긴급 인력 출동 요원 역시 연계망에서 가장 가까운 권역의 전담 직원이 출동하므로 구별 및 불이익은 완전히 존재하지 않습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>2026년 신생 할인 프로그램 중 가장 주목할 만한 특약은 무엇인가요?</h3>
+                    <p>2026년 들어 더욱 중요도가 격상된 부분은 스마트폰의 안전 운행 정보 축적을 기반으로 하는 운행 연계 특별 할인 제도입니다. 과거에 비해 위성 신호의 오차가 대폭 감소하여 운전자의 제동 습관이나 주차 특성을 한 단계 더 고도화하여 평가하므로 무사고 요건과 복합되어 장기 가입자들에게 극도로 유리한 단가를 연출해 냅니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>신차를 출고받자마자 즉시 모바일 다이렉트 가입이 가능한지 궁금합니다.</h3>
+                    <p>예, 그렇습니다. 신차의 고유 차대번호만 발급되어 있다면 어플과 사이트를 통해 차종 수동 입력을 진행하거나 차대번호 17자리를 기재하여 당일 밤 12시 혹은 즉시 효력이 발생하는 온라인 상품을 간편 설계하여 바이어들에게 전달할 수 있을 만큼 초스피드로 처리됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="text-align: center; padding: 40px 0;">
+            <p style="color: #718096; font-size: 0.9em; line-height: 1.6;">
+                본 웹페이지에서 게시 및 연산하여 시각화한 요율 지표와 예상 가입비는 손해보험 업계의 평균 데이터와 기본 산식을 토대로 전개된 가상의 모의 데이터 예시입니다.<br>
+                실질적인 보장 계약 및 최종 견적 계산은 반드시 각 제휴 브랜드의 홈페이지 및 정식 약관을 근간으로 하여 진행하시기 바랍니다.
+            </p>
+            
+            <ul class="keyword-list">
+                <li>#자동차보험다이렉트차이</li>
+                <li>#다이렉트자동차보험비교</li>
+                <li>#온라인첫차보험료</li>
+                <li>#연령별가입비용계산기</li>
+                <li>#아반떼다이렉트가격</li>
+                <li>#그랜저평균견적</li>
+                <li>#만21세신규가입</li>
+                <li>#만26세할인금액</li>
+                <li>#만30세예상비용</li>
+                <li>#만43세가장저렴한곳</li>
+                <li>#수입전기차보험차이점</li>
+                <li>#디시인사이드가입후기</li>
+                <li>#보배드림보험추천</li>
+                <li>#펨코할인특약종류</li>
+                <li>#신규사은품주유상품권</li>
+                <li>#현금지원금이벤트</li>
+                <li>#모바일전용앱계산기</li>
+                <li>#챗지피티보험설계</li>
+                <li>#제미나이견적비교</li>
+                <li>#2026년보험트렌드</li>
+            </ul>
+        </section>
     </main>
-  </body>
-</html>
+
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+  
